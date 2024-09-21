@@ -164,6 +164,11 @@ nav{
 } 
 
 @media screen and (max-width:425px){
+    .hero-section{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     .hero-content{
         font-size: small;
         text-align: center;
@@ -249,6 +254,7 @@ nav{
         flex-direction: column;
         padding: 20px;
         text-align: center;
+        justify-content: center;
     }
 
     .about-content {
@@ -344,6 +350,7 @@ nav{
     .travel-section {
         flex-direction: column-reverse;
         padding: 20px;
+        justify-content: center;
     }
 
     .travel-image-container {
@@ -437,6 +444,7 @@ nav{
         flex-direction: column;
         padding: 20px;
         text-align: center;
+        justify-content: center;
     }
 
     .transport-content {
