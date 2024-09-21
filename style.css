@@ -7,8 +7,18 @@
 }
 
 
-.main-containerP{
+.main-container {
     max-width: 100vw;
+    animation: fade 0.5s ease-in-out 0.5s 1 normal;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 a{
