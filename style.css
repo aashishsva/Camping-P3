@@ -58,7 +58,7 @@ nav{
 }
 
 .hero-section{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,6 +72,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     height: 100%;
     text-shadow: rgb(12, 12, 12) 1px 0 10px;
@@ -162,13 +163,30 @@ nav{
     }
 } 
 
+@media screen and (max-width:425px){
+    .hero-content{
+        font-size: small;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-content .banner{
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .social {
+        display: none;
+        padding: 0;
+    }
+}
 
 
 
 /* about */
 
 .about-section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -225,10 +243,46 @@ nav{
     box-shadow: 0 5px 30px black;
 }
 
+
+@media screen and (max-width: 425px) {
+    .about-section {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .about-image-container {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        border-radius: 0;
+        margin-top: 20px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: none;
+    }
+}
+
+
+
 /* travel */
 
 .travel-section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -286,10 +340,44 @@ nav{
     box-shadow: 0 5px 30px black;
 }
 
+@media (max-width: 425px) {
+    .travel-section {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .travel-image-container {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .travel-content {
+        max-width: 100%;
+        padding-right: 0;
+        margin-left: 0;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .travel-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .travel-content p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
 /* transport */
 
 .transport-section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -344,11 +432,45 @@ nav{
     box-shadow: 0 5px 30px black;
 }
 
+@media screen and (max-width: 425px) {
+    .transport-section {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .transport-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .transport-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .transport-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .transport-image-container {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        border-radius: 0;
+        margin-top: 20px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: none;
+    }
+}
+
+
 
 /* explore */
 
 .explore-section{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -360,9 +482,7 @@ nav{
 
 .explore-text h2{
     font-size: 2rem;
-    
     letter-spacing: 5px;
-    
 }
 
 .explore-image-container {
@@ -371,9 +491,11 @@ nav{
     align-items: center;
     height: 100vh;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .card {
+    min-width: 200px;
     position: relative;
     flex: 1;
     height: 300px;
@@ -403,15 +525,29 @@ nav{
     flex: 3;
 }
 
+@media screen and (max-width: 425px) {
+    .explore-image-container {
+        flex-direction: column; /* Stack the cards vertically */
+        height: auto; /* Remove the fixed height to avoid overflow */
+    }
+
+    .card {
+        flex: unset; /* Reset flex behavior */
+        width: 100%; /* Make the card take up full width */
+        margin-bottom: 15px; /* Add spacing between cards */
+    }
+}
 
 
 /* why section */
 .why-section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     padding: 40px;
     background-color: #0b1d27;
     color: white;
+    box-sizing: border-box;
+    /* margin-bottom: 60px; */
 }
 
 .why-text{
@@ -466,6 +602,27 @@ nav{
     color: #B2B9C1;
     font-family: 'Montserrat', sans-serif;
 }
+@media screen and (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        font-size: small;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    /* Reduce padding and width for smaller screens */
+    .stat-item {
+        padding: 20px 0;
+        border-radius: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Adjust text padding for smaller screens */
+    .why-text {
+        padding: 0 20px;
+    }
+}
 
 
 /* footer */
@@ -494,7 +651,14 @@ footer{
     transition: color 0.3s ease;
     cursor: pointer;
 }
-
+@media screen and (max-width:768px) {
+    footer{
+        position:static;
+        padding-top: 5px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 @media screen and (max-width: 500px) {
     footer{
         flex-direction: column;
